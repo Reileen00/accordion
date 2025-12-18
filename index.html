@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+                font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            
+            }
+        .content {
+            display: none;
+            width:50%;
+            height: 150px;
+            border: 0.2rem solid black;
+            border-radius: 15px;
+            margin: 10px 10px 10px 10px;
+            border-spacing: 10px ;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+            font-size: 1.8rem;
+        }
+        .btn{
+            color: white;
+            background-color: black;
+            font-size: 1.3rem;
+            margin: 5px 5px 5px 5px;
+            border-radius: 15px;
+            width:50%;
+            align-items: center;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <p>Choose options accordion</p>
+
+    <button class="btn">Option 1</button>
+    <p class="content">Content 1</p>
+
+    <button class="btn">Option 2</button>
+    <p class="content">Content 2</p>
+
+    <button class="btn">Option 3</button>
+    <p class="content">Content 3</p>
+
+    <button class="btn">Option 4</button>
+    <p class="content">Content 4</p>
+
+    <button class="btn">Option 5</button>
+    <p class="content">Content 5</p>
+</div>
+
+<script>
+    const buttons = document.querySelectorAll(".btn");
+    const contents = document.querySelectorAll(".content");
+
+    buttons.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+            const content = contents[index];
+
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
